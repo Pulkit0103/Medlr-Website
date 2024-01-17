@@ -83,7 +83,7 @@ const Home = () => {
               backgroundColor: '#f9f9f9',
             }}
           >
-            <strong>{result.Medicine_Name}</strong> - Real Price: ${result.Real_Price} - Manufacturer: {result.Manufacturer}
+            <strong>{result.id}</strong> : <strong>{result.Medicine_Name}</strong> - Real Price: ${result.Real_Price} - Discounted Price: {result.Discounted_Price} - Manufacturer: {result.Manufacturer} - Medicine Link: {result.Medicine_Link} - Salts: {result.Salts}  - Quantity text: {result.Quantity_text} - Prescription Required: {result.Prescription_Required} - Packaging: {result.Packaging} - Quantity: {result.Quantity}
           </li>
         ))}
       </ul>
