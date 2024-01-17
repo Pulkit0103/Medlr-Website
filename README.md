@@ -1,40 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Medicine-App
+- A Nextjs based frontend app with Backend API in Next.js and Express + MySQL database.
+- I have deployed the application on Vercel.
 
-## Getting Started
+## Tech-Stack
+- Next.js
+- Node.js + Express.js
+- MySQL
+- Vercel
 
-First, run the development server:
+## Working
+- The user can put any text in the Input Box.
+- The app will show the Matching Medicine Names(Partially Matched names also shown).
+- The Search Results has been Paginated. It will show only 10 Results on a Single Page.
+- Each Entry is Represented in the form of an Individual Text Box, Which can display the relevant information accordingly.
+- The app also has sorting features on the basis of Price Ascending or Descending, Names ascending or descending.
+- The UI and Functionalities are working perfectly as designed.
+- The app is deployed on the Vercel Platform. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Layout
+(Medicine App Pics/Initial Page)
+![image](https://github.com/Pulkit0103/medlr-assignment/assets/74561711/ef93ca6e-1107-4734-91cc-a340d8935aa5)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+(Medicine App Pics/No Sorting)
+![image](https://github.com/Pulkit0103/medlr-assignment/assets/74561711/a9d43aaa-0c59-44c4-bdc8-b9dcb838e2d8)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+(Medicine App Pics/Price Ascending)
+![image](https://github.com/Pulkit0103/medlr-assignment/assets/74561711/12df2eb3-118b-4de4-a356-4d114c726723)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+(Medicine App Pics/Names descending)
+![image](https://github.com/Pulkit0103/medlr-assignment/assets/74561711/31ca3c86-2d07-4317-83ff-c611aed16c03)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Branches
+I have worked on Frontend + Backend Simultaneously.
+Level - 1 Basic Search Implementation + Set Up the Backend:
+      - I have made the Input text box and setup the Backend.
+Level - 2 [step-2 branch] Additional Search Features and Enhanced UI/UX:
+      - Partial Matching has been added as pre Query.
+      - I have added Filtering + sorting Functionalities in the Frontend + Backend.
+      - I have enhanced the UI.
+Level - 3 [step-3 branch] Pagination/Infinite Scroll, and Multi-Search:
+      - I have added Pagination facility. Infinite Scroll is very easy to add.
+      - Multi-Search works can be added in the similar way.
