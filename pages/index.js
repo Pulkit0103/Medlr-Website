@@ -56,7 +56,7 @@ const Home = () => {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center', maxWidth: '800px', margin: 'auto' }}>
-      <h1 style={{ color: '#333', marginBottom: '20px' }}>Search App</h1>
+      <h1 style={{ color: '#333', marginBottom: '20px' }}>Medicine Search App</h1>
       <SearchInput onSearch={handleSearch} />
 
       <div style={{ marginBottom: '20px' }}>
