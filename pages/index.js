@@ -1,26 +1,30 @@
 // pages/index.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchInput from '../components/SearchInput';
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const handleSearch = async (query) => {
     setSearchQuery(query);
+    setCurrentPage(1); // Reset to the first page
 
     // Mock API request
     const response = await fetch(`/api/search?query=${query}`);
     const data = await response.json();
 
     setSearchResults(data.results);
+    setTotalPages(data.totalPages);
   };
 
   const handleSort = (criteria) => {
     let sortedResults = [...searchResults];
 
     if (criteria === 'relevance') {
-      
+      // Implement your relevance sorting logic here
     } else if (criteria === 'price-asc') {
       sortedResults.sort((a, b) => a.Real_Price - b.Real_Price);
     } else if (criteria === 'price-desc') {
@@ -34,9 +38,25 @@ const Home = () => {
     setSearchResults(sortedResults);
   };
 
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+
+    // Mock API request for paginated results
+    fetch(`/api/search?query=${searchQuery}&page=${newPage}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSearchResults(data.results);
+        setTotalPages(data.totalPages);
+      });
+  };
+
+  useEffect(() => {
+    // You might want to perform an initial search or fetch here
+  }, []);
+
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center', maxWidth: '800px', margin: 'auto' }}>
-      <h1 style={{ color: '#333', marginBottom: '20px' }}>Search Medicine App</h1>
+      <h1 style={{ color: '#333', marginBottom: '20px' }}>Search App</h1>
       <SearchInput onSearch={handleSearch} />
 
       <div style={{ marginBottom: '20px' }}>
@@ -63,10 +83,26 @@ const Home = () => {
               backgroundColor: '#f9f9f9',
             }}
           >
-            <strong>{result.id}</strong> : <strong>{result.Medicine_Name}</strong> - Real Price: ${result.Real_Price} - Discounted Price: {result.Discounted_Price} - Manufacturer: {result.Manufacturer} - Medicine Link: {result.Medicine_Link} - Salts: {result.Salts}  - Quantity text: {result.Quantity_text} - Prescription Required: {result.Prescription_Required} - Packaging: {result.Packaging} - Quantity: {result.Quantity}
+            <strong>{result.Medicine_Name}</strong> - Real Price: ${result.Real_Price} - Manufacturer: {result.Manufacturer}
           </li>
         ))}
       </ul>
+
+      <div style={{ marginTop: '20px' }}>
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          style={{ marginRight: '10px' }}
+        >
+          Previous Page
+        </button>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next Page
+        </button>
+      </div>
     </div>
   );
 };
