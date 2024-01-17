@@ -32,13 +32,13 @@
 
 
 ## Branches
-I have worked on Frontend + Backend Simultaneously.
-Level - 1 Basic Search Implementation + Set Up the Backend:
-      - I have made the Input text box and setup the Backend.
-Level - 2 [step-2 branch] Additional Search Features and Enhanced UI/UX:
-      - Partial Matching has been added as pre Query.
-      - I have added Filtering + sorting Functionalities in the Frontend + Backend.
-      - I have enhanced the UI.
-Level - 3 [step-3 branch] Pagination/Infinite Scroll, and Multi-Search:
-      - I have added Pagination facility. Infinite Scroll is very easy to add.
-      - Multi-Search works can be added in the similar way.
+- I have worked on Frontend + Backend Simultaneously.
+- Level - 1 Basic Search Implementation + Set Up the Backend:
+- - I have made the Input text box and setup the Backend.
+- Level - 2 [step-2 branch] Additional Search Features and Enhanced UI/UX:
+- - Partial Matching has been added as pre Query.
+- - I have added Filtering + sorting Functionalities in the Frontend + Backend.
+- - I have enhanced the UI.
+- Level - 3 [step-3 branch] Pagination/Infinite Scroll, and Multi-Search:
+- - I have added Pagination facility. Infinite Scroll is very easy to add.
+- - Multi-Search works can be added in the similar way.
